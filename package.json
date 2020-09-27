@@ -1,8 +1,8 @@
 {
   "name": "jsv-compiler",
   "version": "0.0.1",
-  "description": "",
-  "keywords": [],
+  "description": "use vue3 template in .js",
+  "keywords": ["vue","jsv","js"],
   "main": "dist/jsv-compiler.cjs.js",
   "module": "dist/jsv-compiler.es5.js",
   "typings": "dist/types/jsv-compiler.d.ts",
@@ -12,7 +12,7 @@
   "author": "瑞龚 <1648555091@qq.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ruige24601/jsv-compiler.git"
   },
   "license": "MIT",
   "engines": {
