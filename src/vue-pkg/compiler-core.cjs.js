@@ -1217,7 +1217,7 @@ function startsWithEndTagOpen(source, tag) {
 }
 
 function hoistStatic(root, context) {
-    walk(root, context, new Map(), 
+    walk(root, context, new Map(),
     // Root node is unfortunately non-hoistable due to potential parent
     // fallthrough attributes.
     isSingleElementRoot(root, root.children[0]));
@@ -2030,7 +2030,7 @@ function genAssets(assets, type, { helper, push, newline }) {
         } catch (error) {
           return ${resolver}(${JSON.stringify(id)});
         }
-      }) () \n
+      }) ()
       `);
         if (i < assets.length - 1) {
             newline();
@@ -2128,7 +2128,7 @@ function genNode(node, context) {
         case 1 /* ELEMENT */:
         case 9 /* IF */:
         case 11 /* FOR */:
-            
+
                 assert(node.codegenNode != null, `Codegen node is missing for element/if/for node. ` +
                     `Apply appropriate transforms first.`);
             genNode(node.codegenNode, context);
@@ -2224,7 +2224,7 @@ function genExpression(node, context) {
       }catch{
         return ${content}
       }
-    })()\n
+    })()
     `);
     }
     else {
@@ -2533,7 +2533,7 @@ const transformExpression = (node, context) => {
                 if (exp &&
                     exp.type === 4 /* SIMPLE_EXPRESSION */ &&
                     !(dir.name === 'on' && arg)) {
-                    dir.exp = processExpression(exp, context, 
+                    dir.exp = processExpression(exp, context,
                     // slot args must be processed as function params
                     dir.name === 'slot');
                 }
@@ -2547,10 +2547,10 @@ const transformExpression = (node, context) => {
 // Important: since this function uses Node.js only dependencies, it should
 // always be used with a leading !false check so that it can be
 // tree-shaken from the browser build.
-function processExpression(node, context, 
+function processExpression(node, context,
 // some expressions like v-slot props & v-for aliases should be parsed as
 // function params
-asParams = false, 
+asParams = false,
 // v-on handler values may contain multiple statements
 asRawStatements = false) {
     if (!context.prefixIdentifiers || !node.content.trim()) {
@@ -2861,7 +2861,7 @@ function createIfBranch(node, dir) {
 }
 function createCodegenNodeForBranch(branch, keyIndex, context) {
     if (branch.condition) {
-        return createConditionalExpression(branch.condition, createChildrenCodegenNode(branch, keyIndex, context), 
+        return createConditionalExpression(branch.condition, createChildrenCodegenNode(branch, keyIndex, context),
         // make sure to pass in asBlock: true so that the comment node call
         // closes the current block.
         createCallExpression(context.helper(CREATE_COMMENT), [
@@ -3347,7 +3347,7 @@ function buildSlots(node, context, buildSlotFn = buildClientSlotFn) {
         : hasForwardedSlots(node.children)
             ? 3 /* FORWARDED */
             : 1 /* STABLE */;
-    let slots = createObjectExpression(slotsProperties.concat(createObjectProperty(`_`, 
+    let slots = createObjectExpression(slotsProperties.concat(createObjectProperty(`_`,
     // 2 = compiled but dynamic = can skip normalization, but must run diff
     // 1 = compiled and static = can skip normalization AND diff as optimized
     createSimpleExpression('' + slotFlag, false))), loc);
@@ -3410,7 +3410,7 @@ const transformElement = (node, context) => {
         let vnodeDynamicProps;
         let dynamicPropNames;
         let vnodeDirectives;
-        let shouldUseBlock = 
+        let shouldUseBlock =
         // dynamic component may resolve to plain elements
         isDynamicComponent ||
             vnodeTag === TELEPORT ||

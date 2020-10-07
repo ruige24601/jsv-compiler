@@ -1,8 +1,12 @@
 {
   "name": "jsv-compiler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "use vue3 template in .js",
-  "keywords": ["vue","jsv","js"],
+  "keywords": [
+    "vue",
+    "jsv",
+    "js"
+  ],
   "main": "dist/jsv-compiler.cjs.js",
   "module": "dist/jsv-compiler.es5.js",
   "typings": "dist/types/jsv-compiler.d.ts",
@@ -88,14 +92,18 @@
     "@types/node": "^14.11.2",
     "colors": "^1.4.0",
     "commitizen": "^4.2.1",
+    "consolidate": "^0.16.0",
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.0",
-    "jest": "^26.4.2",
-    "jest-config": "^26.4.2",
+    "jest": "^26.5.0",
+    "jest-config": "^26.5.0",
     "lint-staged": "^10.4.0",
     "lodash.camelcase": "^4.3.0",
+    "merge-source-map": "^1.1.0",
+    "postcss-modules": "^3.2.2",
+    "postcss-selector-parser": "^6.0.4",
     "prettier": "^2.1.2",
     "prompt": "^1.0.0",
     "replace-in-file": "^6.1.0",
@@ -109,7 +117,7 @@
     "semantic-release": "^17.1.2",
     "shelljs": "^0.8.4",
     "travis-deploy-once": "^5.0.11",
-    "ts-jest": "^26.4.0",
+    "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
@@ -118,6 +126,10 @@
     "typescript": "^4.0.3"
   },
   "dependencies": {
-    "vue": "^2.6.12"
+    "@vue/compiler-core": "^3.0.0",
+    "@vue/compiler-ssr": "^3.0.0",
+    "@vue/shared": "^3.0.0",
+    "postcss": "^8.1.1",
+    "vue": "^3.0.0"
   }
 }

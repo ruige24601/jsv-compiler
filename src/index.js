@@ -1,18 +1,18 @@
 const { Readable } = require('stream');
 const {compileJsv} = require('./compileJsv')
 
-const jsvPlugin = ({app, config, resolver})=>{
-  app.use(async (ctx, next)=>{
+const jsvPlugin = ({ app, config, resolver }) => {
+  app.use(async (ctx, next) => {
 
     await next()
-    if(!/\.js(v)?/.test(ctx.path)){
+    if (!/\.js(v)?/.test(ctx.path)) {
       return;
     }
     ctx.type = 'js'
     const src = await readBody(ctx.body)
 
-    if(/<template/.test){
-      const { code, map} = compileJsv(src)
+    if (/<template/.test) {
+      const { code, map } = compileJsv(src)
       ctx.body = code
     }
 
@@ -44,4 +44,6 @@ async function readBody(
   }
 }
 
+
 exports.jsvPlugin = jsvPlugin
+exports.compileJsv = compileJsv

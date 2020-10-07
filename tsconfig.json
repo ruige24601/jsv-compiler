@@ -16,5 +16,5 @@
     "typeRoots": ["node_modules/@types"],
     "importHelpers": false,
   },
-  "include": ["src"]
+  "include": ["src", "examples/compileJsv.js"]
 }
