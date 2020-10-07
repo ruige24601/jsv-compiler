@@ -1,5 +1,7 @@
 在 *.js* 文件中使用 vue3 模板语法
 
+在线编译：
+[https://ruige24601.github.io/jsv-compiler/playground](https://ruige24601.github.io/jsv-compiler/playground)
 # 使用
 ### 1. 创建vue3项目
 ```
